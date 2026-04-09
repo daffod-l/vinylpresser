@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>vinylpresser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="fadeScreen"></div> 
+    <div id="homepage">
+        <h1>vinylpress</h1>
+        <b1>~ press custom records with playlists or song selection ~</b1>
+        <a href="page1.html">
+            <button class="fadeButton">start</button>
+        </a>
+    </div>
+    <div class="credits">made with ♥︎ by @sunsetfuneral</div>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+
+                if (link.hostname === window.location.hostname) {
+                e.preventDefault(); 
+                const target = link.href;
+
+                document.querySelector('.fadeScreen').classList.add('isActive');
+
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 300); 
+                }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const overlay = document.querySelector('.fadeScreen');
+            overlay.classList.remove('isActive');
+        });
+    </script>
+</body>
+</html>

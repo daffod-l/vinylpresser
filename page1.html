@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>vinylpresser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="fadeScreen isActive"></div> 
+    <div id="songimport">
+        <h1>song selection</h1>
+        <div class="container">
+            <div class="box">
+                <b1>link spotify playlist</b1>
+            </div>
+            <div class="box">
+                <b1>manually search tracks</b1>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                if (link.hostname === window.location.hostname) {
+                    e.preventDefault(); 
+                    const target = link.href;
+                    document.querySelector('.fadeScreen').classList.add('isActive');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 200); 
+                }
+            });
+        });
+
+        window.addEventListener('pageshow', () => {
+            const overlay = document.querySelector('.fadeScreen');
+            overlay.classList.remove('isActive');
+        });
+    </script>
+</body>
+</html>

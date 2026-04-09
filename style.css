@@ -1,0 +1,121 @@
+@font-face {
+    font-family: Caprasimo;
+    src: url(./assets/fonts/Caprasimo/Caprasimo-Regular.ttf), format('truetype');
+}
+
+@font-face {
+    font-family: Azeret_Mono;
+    src: url(./assets/fonts/Azeret_Mono/static/AzeretMono-Regular.ttf), format('truetype');
+}
+
+@font-face {
+    font-family: Azeret_Mono;
+    src: url(./assets/fonts/Azeret_Mono/static/AzeretMono-Bold.ttf), format('truetype');
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100dvh;
+    background: #eae3df;
+    position: relative;
+}
+    
+#homepage,
+#songimport {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: opacity 1.0s ease;
+}
+
+.credits {
+    font-family: 'Azeret_Mono';
+    font-size: clamp(10px, 0.9vw, 15px);
+    color: #454751;
+    
+    position: fixed;
+    bottom: 10px; 
+    right: 15px; 
+    z-index: 900; 
+    pointer-events: none; 
+}
+
+#homepage h1,
+#songimport h1 {
+    font-family: 'Caprasimo', serif;
+    font-size: clamp(42px, 8vw, 90px);
+    color: #171c1e;
+    font-weight: normal;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#homepage b1,
+#songimport b1 {
+    font-family: 'Azeret_Mono', serif;
+    font-size: clamp(16px, 1.5vw, 30px);
+    color:#3a3c46;
+    text-align: center;
+}
+
+.fadeButton {
+    margin-top: 40px;
+    padding: 15px;
+    font-family: 'Azeret_Mono', serif;
+    font-weight: bold;
+    font-size: clamp(18px, 3vw, 25px);
+    background-color: #171c1e;
+    color: #eae3df;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fadeButton:hover {
+    background-color: #eae3df;
+    color: #171c1e;
+}
+
+.fadeScreen {
+  position: fixed;
+  inset: 0;
+  background-color: #eae3df;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.fadeScreen.isActive {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.container {
+  display: flex;       
+  gap: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.box {
+  flex: 1;             
+  padding: 20px;
+  white-space: nowrap;
+  background-color:#eae3df
+}
