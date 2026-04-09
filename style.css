@@ -47,7 +47,7 @@ body {
 .credits {
     font-family: 'Azeret_Mono';
     font-size: clamp(10px, 0.9vw, 15px);
-    color: #454751;
+    color: #515360;
     
     position: fixed;
     bottom: 10px; 
